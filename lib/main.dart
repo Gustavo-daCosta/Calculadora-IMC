@@ -13,7 +13,7 @@ class IMCCalculatorApp extends StatelessWidget {
       title: "Calculadora de IMC",
       theme: themeData(),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

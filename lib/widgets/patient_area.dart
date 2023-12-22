@@ -1,4 +1,5 @@
 import 'package:calculadora_imc/themes/colors_pallete.dart';
+import 'package:calculadora_imc/global/globals.dart' as globals;
 import 'package:flutter/material.dart';
 
 class PatientArea extends StatefulWidget {
@@ -33,6 +34,7 @@ class _PatientAreaState extends State<PatientArea> {
               color: Colors.white,
               fontSize: 20,
               fontWeight: FontWeight.bold,
+              overflow: TextOverflow.fade,
             ),
           ),
           const SizedBox(height: 6),
@@ -43,13 +45,13 @@ class _PatientAreaState extends State<PatientArea> {
                 context,
                 title: "NOME",
                 icon: Icons.person,
-                measure: widget.name,
+                measure: globals.nameController.text,
               ),
               infoCard(
                 context,
                 title: "IDADE",
                 icon: Icons.group_add_rounded,
-                measure: widget.age.toString(),
+                measure: globals.ageController.text,
               ),
             ],
           ),
@@ -60,13 +62,13 @@ class _PatientAreaState extends State<PatientArea> {
                 context,
                 title: "PESO",
                 icon: Icons.monitor_weight_rounded,
-                measure: "${widget.weight}Kg",
+                measure: "${globals.weightController.text}Kg",
               ),
               infoCard(
                 context,
                 title: "ALTURA",
                 icon: Icons.man,
-                measure: "${(widget.height)}m",
+                measure: "${(globals.heightController.text)}m",
               ),
             ],
           )
